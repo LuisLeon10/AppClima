@@ -29,6 +29,7 @@ async function search(query){
         const data = await response.json();
         
         console.log(data);
+        city.html(`${data.name}, ${data.sys.country}`);
         date.html((new Date()).toLocaleDateString());
         updateImages(data);
         temp.html(`${toCelsius(data.main.temp)}c`);
